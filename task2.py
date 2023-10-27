@@ -17,9 +17,6 @@ def largest(m):
 
 if __name__ == "__main__":
   assert largest((3,1,4,7,13,9)) == 13
-  print(largest((3,1,4,7,13,9)))
   assert largest([5,1,12.3]) == 12.3
-  print(largest([5,1,12.3]))
   assert largest([-3,-1,1.2,0.2]) == 1.2
-  print(largest([-3,-1,1.2,0.2]))
 

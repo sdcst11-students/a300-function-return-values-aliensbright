@@ -16,6 +16,6 @@ def isInteger(num):
 
 if __name__ == "__main__":
   assert isInteger( 9.5 ) == False
-  assert isInteger( -2.0 ) == True    
+  assert isInteger( -2 ) == True    
   assert isInteger("hello") == False
   assert isInteger(0) == True

@@ -16,5 +16,4 @@ if __name__ == "__main__":
   assert perimeter( [5,2.2,3] ) == 10.2
   assert perimeter( [5,2,3,4,1,3,2] ) == 20
   assert perimeter( [4,4,4,4] ) == 16
-  print(perimeter( [4,4,4,4] ))
 

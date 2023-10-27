@@ -33,9 +33,6 @@ output is "There is 1 solution, x=??"
 If there are two solutions:
 output is: "The solutions are x=?? and x=??"
 """
-x = float(input('Enter the value attached to x^2:'))
-y = float(input('Enter the value attached to x:'))
-z = float(input('Enter the constant value:'))
 
 def numSolutions(a,b,c):
     descriminant = b**2 - 4 * a * c
@@ -47,50 +44,43 @@ def numSolutions(a,b,c):
         sols='no real'
     return sols
 
-def solutions(a,b,c):
-    if sols==2:
-        solution1 = (-b + (b**2 - 4 * a * c)**0.5) / (2 * a)
-        solution2 = (-b - (b**2 - 4 * a * c)**0.5) / (2 * a)
-
+def solutions(a,b,c,d):
+    if d==2:
+        solution1 = (-b - (b**2 - 4 * a * c)**0.5) / (2 * a)
+        solution2 = (-b + (b**2 - 4 * a * c)**0.5) / (2 * a)
         solution1 = round(solution1,2)
         solution2 = round(solution2,2)
-
         solsList = [solution1,solution2]
-
-    elif sols==1:
+    elif d==1:
         solution1 = (-b) / (2*a)
-
         solution1 = round(solution1,2)
-
         solsList = [solution1]
-
     else:
-        solution1=0
-        solsList=['']
+        solsList=[]
     return solsList
+name = 'QUADRATIC EQUATION CALCULATOR.'
+instructions = '\nI will be finding the real solutions of a quadratic equation of the form of ax^2 + bx + c = 0, they will be rounded to 2 decimal places. You will need to\ninput the "a", "b", "c" values.\n'
 
-#I will be finding the real solutions of a quadratic equation under the form of ax^2 + bx + c = 0.\n You will need to input the "a", "b", "c" values.'
-
-def title():
-    pass
+def title(m,n):
     # inputs none
     # return str of All the title and instructions on one line
-
+    nameInst = m+n
+    return nameInst
 
 def main():
     # Display Title and Instructions
-    print()
+    print(title(name,instructions))
     # Your code and function calls should go here
     x = float(input('Enter the value attached to x^2:'))
     y = float(input('Enter the value attached to x:'))
     z = float(input('Enter the constant value:'))
     sols = numSolutions(x,y,z)
-    solsList = solutions(x,y,z)
+    solsList = solutions(x,y,z,sols)
     print('There are', sols,'solutions!')
     if sols=='no real':
         pass
     else:
-        print('The solutions are',solsList)
+        print('\nThe solutions are',solsList,'\n')
 
 
 main()
