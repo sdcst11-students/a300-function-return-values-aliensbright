@@ -33,38 +33,64 @@ output is "There is 1 solution, x=??"
 If there are two solutions:
 output is: "The solutions are x=?? and x=??"
 """
+x = float(input('Enter the value attached to x^2:'))
+y = float(input('Enter the value attached to x:'))
+z = float(input('Enter the constant value:'))
 
 def numSolutions(a,b,c):
-    # inputs:
-    # float a
-    # float b
-    # float c
-    # Description:
-    #
-    # return 0, 1 or 2
-    return 
+    descriminant = b**2 - 4 * a * c
+    if descriminant>0:
+        sols=2
+    if descriminant==0:
+        sols=1
+    if descriminant<0:
+        sols='no real'
+    return sols
 
 def solutions(a,b,c):
-    #inputs:
-    # float a
-    # float b
-    # float c
-    # Desription:
-    #
-    # return tuple of float solution1 and float solution2
-    return
+    if sols==2:
+        solution1 = (-b + (b**2 - 4 * a * c)**0.5) / (2 * a)
+        solution2 = (-b - (b**2 - 4 * a * c)**0.5) / (2 * a)
+
+        solution1 = round(solution1,2)
+        solution2 = round(solution2,2)
+
+        solsList = [solution1,solution2]
+
+    elif sols==1:
+        solution1 = (-b) / (2*a)
+
+        solution1 = round(solution1,2)
+
+        solsList = [solution1]
+
+    else:
+        solution1=0
+        solsList=['']
+    return solsList
+
+#I will be finding the real solutions of a quadratic equation under the form of ax^2 + bx + c = 0.\n You will need to input the "a", "b", "c" values.'
 
 def title():
+    pass
     # inputs none
     # return str of All the title and instructions on one line
-    return
 
 
 def main():
     # Display Title and Instructions
-    print( title() )
+    print()
     # Your code and function calls should go here
-
+    x = float(input('Enter the value attached to x^2:'))
+    y = float(input('Enter the value attached to x:'))
+    z = float(input('Enter the constant value:'))
+    sols = numSolutions(x,y,z)
+    solsList = solutions(x,y,z)
+    print('There are', sols,'solutions!')
+    if sols=='no real':
+        pass
+    else:
+        print('The solutions are',solsList)
 
 
 main()
