@@ -26,11 +26,9 @@ if __name__ == "__main__":
     assert sorted(factors(25)) == [1,5,25]
 
     n = factors(10)
-    print("The factors of 10 are ")
+    print("The factors of 10 are ",end='')
     for i in n:
         print(i,end="")
         if i != n[-1]:
             print(", ", end="")
     else: print()
-
-    

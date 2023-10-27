@@ -9,12 +9,17 @@ If you are stuck, don't forget to refer to your assignment on lists to help you 
 The return value is the largest value in the list
 (2 points)
 """
-def largest():
-  
-  return
+def largest(m):
+  x = list(m)
+  x.sort()
+  answer=x[-1]
+  return answer
 
 if __name__ == "__main__":
   assert largest((3,1,4,7,13,9)) == 13
+  print(largest((3,1,4,7,13,9)))
   assert largest([5,1,12.3]) == 12.3
+  print(largest([5,1,12.3]))
   assert largest([-3,-1,1.2,0.2]) == 1.2
+  print(largest([-3,-1,1.2,0.2]))
 
